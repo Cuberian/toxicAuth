@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\api\v1\LoginController;
 use App\Http\Controllers\AuthController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -15,10 +16,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::post("login", [AuthController::class, 'login']);
-Route::post("register", [AuthController::class, 'register']);
-Route::get("check", [AuthController::class, 'checkToken']);
-
-Route::group(["middleware" => "auth.jwt"], function() {
-    route::get("logout", "App\Http\Controllers\AuthController@logout");
+Route::prefix('/user')->group(function() {
+    Route::post('/login', [LoginController::class, 'login']);
+    Route::post('/register', [LoginController::class, 'register']);
+    Route::middleware('auth:api')->get('/current', [LoginController::class, 'getTokenUser']);
 });
