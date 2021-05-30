@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\api\v1;
 
 use App\Http\Controllers\Controller;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -26,7 +27,19 @@ class LoginController extends Controller
     }
 
     public function register( Request $request ) {
+        $validatedData = $request->validate([
+            'username' => 'required',
+            'email' => 'email|required|unique:users',
+            'password' => 'required'
+        ]);
 
+        $validatedData['password '] = bcrypt($request->password);
+
+        $user = User::create($validatedData);
+
+        $accessToken = $user->createToken('authToken')->accessToken;
+
+        return response(['passport_token' => $accessToken]);
     }
 
     public function getTokenUser( Request $request ) {
