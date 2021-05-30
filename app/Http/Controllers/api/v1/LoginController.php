@@ -33,7 +33,7 @@ class LoginController extends Controller
             'password' => 'required'
         ]);
 
-        $validatedData['password '] = bcrypt($request->password);
+        $validatedData['password'] = bcrypt($request->password);
 
         $user = User::create($validatedData);
 

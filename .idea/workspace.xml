@@ -22,7 +22,6 @@
     <list default="true" id="db460980-3ac8-44ab-9039-58a52cc2144a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/api/v1/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/api/v1/LoginController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -231,6 +230,7 @@
       <workItem from="1620737303143" duration="1575000" />
       <workItem from="1620927434298" duration="1188000" />
       <workItem from="1621089659559" duration="8583000" />
+      <workItem from="1622371343323" duration="1642000" />
     </task>
     <servers />
   </component>
